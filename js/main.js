@@ -1,52 +1,25 @@
-const trackClick = () => {
-    const payload = {
-        "userId": "user1",
-        "event": "Product Viewed",
-        "properties": {
-            "token": "f8da5fe54ec7b4e103fd94b369cc06cd",
-            "distinct_id": "user2",
-            "product_id": "pr_507f1f77bcf86cd799439011",
-            "sku": "G-32",
-            "category": "Games",
-            "name": "Monopoly: 3rd Edition",
-            "brand": "Hasbro",
-            "variant": "200 pieces",
-            "price": 18.99,
-            "quantity": 1
-        }
+
+function getEvents() {
+
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+
+        "url": "https://api.bizzabo.com/api/events",
+        "method": "GET",
+        "headers": {
+            "accept": "application/vnd.bizzabo.v2.0+json",
+            "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
+            "Access-Control-Allow-Origin": "*",
+        },
+        "data": "{}"
     }
 
-
-    $.post("https://api.mixpanel.com/track/",
-        {
-            data: btoa(JSON.stringify(payload)),
-        }, function (data, status) {
-            console.log(status);
-        })
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
 }
 
 
 
 
-
-
-
-//////////Previous Code using mixpanel variable////////
-
-
-// mixpanel.identify('user1');
-// mixpanel.track({
-//     "userId": "user1",
-//     "event": "Product Viewed",
-//     "properties": {
-//         "product_id": "pr_507f1f77bcf86cd799439011",
-//         "sku": "G-32",
-//         "category": "Games",
-//         "name": "Monopoly: 3rd Edition",
-//         "brand": "Hasbro",
-//         "variant": "200 pieces",
-//         "price": 18.99,
-//         "quantity": 1
-//     }
-// }
-// );
