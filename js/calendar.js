@@ -1,30 +1,4 @@
-// document.addEventListener('DOMContentLoaded', function () {
-//   var calendarEl = document.getElementById('calendar');
 
-//   var calendar = new FullCalendar.Calendar(calendarEl, {
-//     initialView: 'dayGridMonth',
-//     initialDate: '2019-06-01',
-//     headerToolbar: {
-//       left: 'prev,next today',
-//       center: 'title',
-//       right: 'dayGridMonth,timeGridWeek,timeGridDay'
-//     },
-//     events: {
-//       url: 'https://api.bizzabo.com/api/events',
-//       method: "GET",
-//       headers: {
-//         "accept": "application/vnd.bizzabo.v2.0+json",
-//         "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
-//         "Access-Control-Allow-Origin": "http://localhost:8080/Desktop/tech_challenge/Bizzabo/"
-//       },
-//       failure: function() {
-//         console.log('failed')
-//       }
-//     }
-//     });
-
-//   calendar.render();
-// });
 
 
 
@@ -491,7 +465,54 @@ let events = {
 
 let eventArr = [];
 
-// Object.keys(events.content).forEach(function (key) {
-//   eventArr.push(key, events.content[key]);
-// });
-// console.log(eventArr[1].endDate)
+Object.keys(events.content).forEach(function (key) {
+  eventArr.push(key, events.content[key]);
+});
+console.log(eventArr[1])
+
+class eventItem {
+  constructor(start, end, url, photo, title) {
+    this.start = start,
+    this.end = end,
+    this.url = url,
+    this.photo = photo
+    this.title = title
+  }
+}
+
+
+let startandend = []
+for (i = 1; i < eventArr.length; i++) {
+
+  let events = new eventItem(eventArr[i].startDate, eventArr[i].endDate, eventArr[i].websiteUrl, eventArr[i].coverPhotoUrl, eventArr[i].name)
+  startandend.push(events)
+}
+console.log(typeof (startandend))
+console.log(startandend)
+
+
+
+
+// console.log(event1)
+
+// for(const property in eventArr) {
+//   console.log(property)
+// }
+
+document.addEventListener('DOMContentLoaded', function () {
+  var calendarEl = document.getElementById('calendar');
+
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    initialDate: '2019-06-01',
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay'
+    },
+    events: startandend
+
+
+  });
+  calendar.render();
+});

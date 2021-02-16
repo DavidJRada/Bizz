@@ -1,12 +1,12 @@
 
 
 
-$(document).ready(function () {
-  getEvents()
-})
+// $(document).ready(function () {
+//   getEvents()
+// })
 
 
-function getEvents() {
+// function getEvents() {
 
 // var settings = {
 //     "async": true,
@@ -23,30 +23,30 @@ function getEvents() {
 // }
 
 
-$.ajax({
-    "url": "https://api.bizzabo.com/api/events",
-    "type": "GET",
-    "xhrFields" : {
-        "accept": "application/vnd.bizzabo.v2.0+json",
-        "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "X-PINGOVER",
-        "Access-Control-Allow-Credentials": "true",
-        "Access-Control-Allow-Methods": ["GET", "OPTIONS", "POST"]
+// $.ajax({
+//     "url": "https://api.bizzabo.com/api/events",
+//     "type": "GET",
+//     "xhrFields" : {
+//         "accept": "application/vnd.bizzabo.v2.0+json",
+//         "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
+//         "Access-Control-Allow-Origin": "http://localhost:8080",
+//         "Access-Control-Allow-Headers": "X-PINGOVER",
+//         "Access-Control-Allow-Credentials": "true",
+//         "Access-Control-Allow-Methods": ["GET", "OPTIONS", "POST"]
 
-    },
-    "crossDomain": "true",
-    "headers": {
-        "accept": "application/vnd.bizzabo.v2.0+json",
-        "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials": "true"
-        // "CORS": "http://localhost:8080"
-    }
-}).done(function (data) {
-    console.log(data);
-});
-}
+//     },
+//     "crossDomain": "true",
+//     "headers": {
+//         "accept": "application/vnd.bizzabo.v2.0+json",
+//         "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
+//         "Access-Control-Allow-Origin": "*",
+//         "Access-Control-Allow-Credentials": "true"
+//         // "CORS": "http://localhost:8080"
+//     }
+// }).done(function (data) {
+//     console.log(data);
+// });
+// }
 
 //     var data = "{}";
 
