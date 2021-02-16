@@ -1,7 +1,4 @@
-
-
-
-
+//Retrieved the events using Postman and brought them in 
 let events = {
   "links": [
     {
@@ -463,13 +460,15 @@ let events = {
   }
 }
 
+//Create empty array to creat our event objects
 let eventArr = [];
 
+//Iterate through the event list and add it to the empty array
 Object.keys(events.content).forEach(function (key) {
   eventArr.push(key, events.content[key]);
 });
-console.log(eventArr[1])
 
+//Created a constructor to load up the event details to be used in the plugin
 class eventItem {
   constructor(start, end, url, photo, title) {
     this.start = start,
@@ -477,28 +476,25 @@ class eventItem {
     this.url = url,
     this.photo = photo
     this.title = title
+    this.backgroundColor = "orange"
+    this.textColor = "Black"
+    this.display = 'block'
   }
 }
 
-
+//Created global variable to hold the new eventItems
 let startandend = []
-for (i = 1; i < eventArr.length; i++) {
 
-  let events = new eventItem(eventArr[i].startDate, eventArr[i].endDate, eventArr[i].websiteUrl, eventArr[i].coverPhotoUrl, eventArr[i].name)
+//Loop through the array of objects and map the applicable variables
+for (i = 1; i < eventArr.length; i++) {
+  
+  let events = new eventItem(eventArr[i].startDate, eventArr[i].endDate, eventArr[i].websiteUrl, eventArr[i].coverPhotoUrl, eventArr[i].name, eventArr[i].backgroundColor, eventArr[i].textColor, eventArr[i].display)
+
   startandend.push(events)
 }
-console.log(typeof (startandend))
-console.log(startandend)
 
 
-
-
-// console.log(event1)
-
-// for(const property in eventArr) {
-//   console.log(property)
-// }
-
+//Call the third party FullCalendar to create a calendar with events
 document.addEventListener('DOMContentLoaded', function () {
   var calendarEl = document.getElementById('calendar');
 
@@ -510,7 +506,8 @@ document.addEventListener('DOMContentLoaded', function () {
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay'
     },
-    events: startandend
+    //Insert the array of objects created before into the events property to get the corresponding key-value pairs
+    events: startandend,
 
 
   });
