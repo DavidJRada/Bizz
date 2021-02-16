@@ -1,10 +1,12 @@
 
+
+
 $(document).ready(function () {
-  requestCurrent()
+  getEvents()
 })
 
 
-// function getEvents() {
+function getEvents() {
 
 // var settings = {
 //     "async": true,
@@ -21,19 +23,30 @@ $(document).ready(function () {
 // }
 
 
-// $.ajax({
-//     "url": "https://www.api.bizzabo.com/api/events",
-//     "method": "GET",
-//     "Content-type": "application/x-www-form-urlencoded",
-//     "headers": {
-//         "accept": "application/vnd.bizzabo.v2.0+json",
-//         "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
-//         "Access-Control-Allow-Origin": "*",
-//     }
-// }).done(function (data) {
-//     console.log(data);
-// });
+$.ajax({
+    "url": "https://api.bizzabo.com/api/events",
+    "type": "GET",
+    "xhrFields" : {
+        "accept": "application/vnd.bizzabo.v2.0+json",
+        "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "X-PINGOVER",
+        "Access-Control-Allow-Credentials": "true",
+        "Access-Control-Allow-Methods": ["GET", "OPTIONS", "POST"]
 
+    },
+    "crossDomain": "true",
+    "headers": {
+        "accept": "application/vnd.bizzabo.v2.0+json",
+        "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": "true"
+        // "CORS": "http://localhost:8080"
+    }
+}).done(function (data) {
+    console.log(data);
+});
+}
 
 //     var data = "{}";
 
@@ -54,26 +67,22 @@ $(document).ready(function () {
 
 
 
-const requestCurrent = () => {
-  $.ajax({
-    //Included city and unit variables
-    url: "https://api.bizzabo.com/api/events/",
-    type: "GET",
-    headers: {
-      "accept": "application/vnd.bizzabo.v2.0+json",
-      "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
-      "Access-Control-Allow-Origin": "*"
-    },
-    data: {
-
-    }
-    //Pull out the relevant information and assign them to variables to be used in the classes
-  }).then(function (data) {
-    console.log(data)
+// const requestCurrent = () => {
+//   $.ajax({
+//     url: "https://api.bizzabo.com/api/events",
+//     type: "GET",
+//     headers: {
+//       "content-type": "application/vnd.bizzabo.v2.0+json",
+//       "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",      
+//     },
+//     data: {
+//     }
+//   }).then(function (data) {
+//     console.log(data)
 
 
-  })
-}
+//   })
+// }
 
 
 // })
@@ -82,6 +91,4 @@ const requestCurrent = () => {
 
 
 //0d4a536dd84f2c41a282e010c8caaf60
-
-
 

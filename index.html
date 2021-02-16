@@ -10,8 +10,15 @@
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>    
-    <script src="js/main.js"></script>
+      <link href='package/main.css' rel='stylesheet' />
+    <script src='package/main.js'></script>
+    <!-- <link rel="stylesheet" href="tui.calendar-master/dist/tui-calendar.css">
+    <script src="tui.calendar-master/dist/tui-calendar.js"></script> -->
+    
+      <script src="js/main.js"></script>
+    <script src="js/calendar.js"></script>
     <link rel="stylesheet" href="css/main.css">
+
 
    
 </head>
@@ -20,7 +27,9 @@
     <h2>Bizzabo Tech Challenge: Calendar of Events</h2>
     <h3>David Rada</h3>
     <br>
-    <button onclick="getEvents()">Upcoming Events</button>
+    <button onclick="makeCalendar()">Upcoming Events</button>
+    <br>
+    <div id='calendar'></div>
 </body>
 
 </html>
