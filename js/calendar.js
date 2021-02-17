@@ -476,8 +476,8 @@ class eventItem {
     this.url = url,
     this.photo = photo
     this.title = title
-    this.backgroundColor = "orange"
-    this.textColor = "Black"
+    this.backgroundColor = "indianred"
+    this.textColor = "white"
     this.display = 'block'
   }
 }
@@ -500,7 +500,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'dayGridMonth',
-    initialDate: '2019-06-01',
+    initialDate: '2021-02-17',
     headerToolbar: {
       left: 'prev,next today',
       center: 'title',
