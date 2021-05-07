@@ -16,7 +16,7 @@
 //     "Content-type": "application/x-www-form-urlencoded",
 //     "headers": {
 //         "accept": "application/vnd.bizzabo.v2.0+json",
-//         "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
+//         "authorization": "Bearer ,
 //         "Access-Control-Allow-Origin": "*",
 //     },
 //     "data": "{}"
@@ -28,7 +28,7 @@
 //     "type": "GET",
 //     "xhrFields" : {
 //         "accept": "application/vnd.bizzabo.v2.0+json",
-//         "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
+//         "authorization":
 //         "Access-Control-Allow-Origin": "http://localhost:8080",
 //         "Access-Control-Allow-Headers": "X-PINGOVER",
 //         "Access-Control-Allow-Credentials": "true",
@@ -38,7 +38,7 @@
 //     "crossDomain": "true",
 //     "headers": {
 //         "accept": "application/vnd.bizzabo.v2.0+json",
-//         "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",
+//         "authorization": "Bearer ,
 //         "Access-Control-Allow-Origin": "*",
 //         "Access-Control-Allow-Credentials": "true"
 //         // "CORS": "http://localhost:8080"
@@ -61,7 +61,7 @@
 
 // xhr.open("GET", "https://api.bizzabo.com/api/events/");
 // xhr.setRequestHeader("accept", "application/vnd.bizzabo.v2.0+json");
-// xhr.setRequestHeader("authorization", "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2");
+// xhr.setRequestHeader("authorization", "Bearer );
 
 // xhr.send(data);
 
@@ -73,7 +73,7 @@
 //     type: "GET",
 //     headers: {
 //       "content-type": "application/vnd.bizzabo.v2.0+json",
-//       "authorization": "Bearer b2f9b657-d8fd-4c34-a28b-eba13cab25c2",      
+//       "authorization": "Bearer ,      
 //     },
 //     data: {
 //     }
@@ -90,5 +90,4 @@
 
 
 
-//0d4a536dd84f2c41a282e010c8caaf60
 
